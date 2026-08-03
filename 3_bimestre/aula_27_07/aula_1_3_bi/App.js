@@ -6,15 +6,15 @@ export default function App() {
     
     <ScrollView>
     <View style={styles.container}>
-      <Text>Open Bom dia amiguinho!</Text>
+      <Text>Open Amo Pizza</Text>
       <StatusBar style="auto" />
       <TextInput>
-        defaultValue="Como vai amiguinho?"
+        defaultValue="Seja-Bem Vindo ao Amo Pizza "
       </TextInput>
 
       <Image
         source={{
-          uri: 'https://reactnative.dev/docs/assets/p_cat1.png',
+          uri: 'https://www.aquariuscuritiba.com.br/wp-content/uploads/2025/05/Pizza-Pesto-1-scaled.jpg',
         }}
         style={{width: 200, height: 200}}
       />
@@ -22,7 +22,7 @@ export default function App() {
 
       <Button
         onPress={() => {}}
-        title={'Hey!'}
+        title={'Faça um pedido!'}
       />
 
       </View>
@@ -33,7 +33,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9bd5f7c2',
+    backgroundColor: '#f7d79bc2',
     alignItems: 'center',
     justifyContent: 'center',
   },
