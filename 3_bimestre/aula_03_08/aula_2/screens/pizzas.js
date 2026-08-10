@@ -18,10 +18,19 @@ export default function login({ navigation }) {
         <TextInput placeholder ="Escolha sua pizza"/>
 
           <Button
-                 title={'Peça sua pizza pelo App ou site'}
-                onPress={() => navigation.navigate('Pizzas')}
+                 title={'Pizza de Queijo'}
+                onPress={() => navigation.navigate('finalizar_pedido')}
               />
 
+            <Button
+                 title={'Pizza de Marguerita'}
+                onPress={() => navigation.navigate('finalizar_pedido')}
+              />   
+
+            <Button
+                 title={'Pizza de Calabresa'}
+                onPress={() => navigation.navigate('finalizar_pedido')}
+              />
        </View>
     );
 

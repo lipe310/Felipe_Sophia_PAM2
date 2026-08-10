@@ -13,18 +13,10 @@ export default function login({ navigation }) {
         style={{wisth: 200,height: 200
         }}/>
         
-        <Text>Open Amo Pizza</Text>
+        <Text>Obrigado pelo seu pedido</Text>
 
-        <TextInput placeholder ="Escolha sua pizza"/>
-
-          <Button
-                 title={'Peça sua pizza pelo App ou site'}
-                onPress={() => navigation.navigate('Pizzas')}
-              />
 
        </View>
     );
 
-
-    
 }

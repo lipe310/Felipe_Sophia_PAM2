@@ -21,6 +21,16 @@ export default function StackNavigator() {
                  component={home}
                 />
 
+                <Stack.Screen
+                 name="pizzas"
+                 component={pizzas}
+                />
+
+                <Stack.Screen
+                 name="finalizar_pedido"
+                 component={finalizar_pedido}
+                />
+
             </Stack.Navigator>   
         </NavigationContainer>
              
