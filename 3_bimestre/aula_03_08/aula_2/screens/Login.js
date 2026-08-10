@@ -1,6 +1,6 @@
 import { View, Text, TextInput, Button, Image } from 'react-native';
 
-export default function login({ navigation }) {
+export default function Login({ navigation }) {
 
     return (
     
@@ -13,7 +13,6 @@ export default function login({ navigation }) {
         style={{wisth: 200,height: 200
         }}/>
         
-        <Text>Open Amo Pizza</Text>
 
         <TextInput placeholder ="Seja-Bem Vindo ao Amo Pizza "/>
 
@@ -21,7 +20,7 @@ export default function login({ navigation }) {
                  title={'Faça um pedido!'}
                 onPress={() => navigation.navigate('home')}
               />
-       </View>
+    </View>
     );
 
 
