@@ -1,54 +1,74 @@
-import { View, Text, TextInput, Button, Image } from 'react-native';
+import React from 'react';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 
-export default function pizzas({ navigation }) {
+export default function App() {
 
-    return (
-    
-    <View>
-        
-        <Text>Amo Pizza</Text>
+  const itens = [
+    { id: '1', nome: 'Pizza de Queijo' },
+    { id: '2', nome: 'Pizza de Marguerita' },
+    { id: '3', nome: 'Pizza de Calabresa' },
+    { id: '4', nome: 'Pizza de Frango' },
+    { id: '5', nome: 'Pizza de Brocolis' },
+    { id: '6', nome: 'Pizza de Chocolate' },
+    { id: '7', nome: 'Pizza de Romeu & Julieta' },
 
-        <TextInput placeholder ="Escolha sua pizza"/>
-     
-     <Image
-        source={{
-            uri: 'https://www.receitasnestle.com.br/sites/default/files/srh_recipes/d036cd01122da62bf581784f52d99b3a.jpg'
-        }}
-        style={{wisth: 100,height: 150
-        }}/>
+  ];
 
-          <Button
-                 title={'Pizza de Queijo'}
-                onPress={() => navigation.navigate('finalizar_pedido')}
-              />
+  return (
+    <View style={styles.container}>
 
-      <Image
-        source={{
-            uri: 'https://rossopizza.com.br/salao/wp-content/uploads/2019/09/istock-181175167.jpg'
-        }}
-        style={{wisth: 100,height: 150
-        }}/>
-      
+      <Text style={styles.titulo}>
+        Lista de pizzas
+      </Text>
 
-            <Button
-                 title={'Pizza de Marguerita'}
-                onPress={() => navigation.navigate('finalizar_pedido')}
-              />   
+      <Text style={styles.subtitulo}>
+       Os melhoes sabores
+      </Text>
 
-      <Image
-        source={{
-            uri: 'https://www.sabornamesa.com.br/media/k2/items/cache/513d7a0ab11e38f7bd117d760146fed3_XL.jpg'
-        }}
-        style={{wisth: 100,height: 150
-        }}/>
+      <FlatList
+        data={itens}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <View style={styles.item}>
+            <Text style={styles.nome}>
+              {item.nome}
+            </Text>
+          </View>
+        )}
+      />
 
-            <Button
-                 title={'Pizza de Calabresa'}
-                onPress={() => navigation.navigate('finalizar_pedido')}
-              />
-       </View>
-    );
-
-
-    
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    paddingTop: 60,
+    backgroundColor: '#FFDBBB',
+  },
+
+  titulo: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+
+  subtitulo: {
+    fontSize: 18,
+    marginBottom: 20,
+  },
+
+  item: {
+    backgroundColor: '#FFFFFF',
+    padding: 15,
+    marginBottom: 10,
+    borderRadius: 8,
+  },
+
+  nome: {
+    fontSize: 17,
+  },
+});
+
