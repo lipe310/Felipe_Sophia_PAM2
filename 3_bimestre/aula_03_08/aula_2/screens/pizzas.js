@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Button } from 'react-native';
 
 export default function App() {
 
@@ -36,9 +36,15 @@ export default function App() {
           </View>
         )}
       />
-
+      
+      <Button
+      title={'Pedir!'}
+      onPress={() => navigation.navigate('finalizar_pedido')}
+      />
     </View>
+    
   );
+
 }
 
 const styles = StyleSheet.create({
@@ -70,5 +76,13 @@ const styles = StyleSheet.create({
   nome: {
     fontSize: 17,
   },
+
+    Button: {
+    backgroundColor: '#FFFFFF',
+    padding: 15,
+    marginBottom: 10,
+    borderRadius: 8,
+  }
+  
 });
 

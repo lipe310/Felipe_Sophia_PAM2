@@ -1,58 +1,29 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Image, Alert } from 'react-native'; // CORRIGIDO: react-native
-import styles from './Estilo';
-import { verificarLogin } from './funcoes'; // CORRIGIDO: nome do arquivo sem espaço
+import { View, Text, TextInput, Button, Image } from 'react-native';
 
-export default function Login({ navigation }) {
-    const [usuario, setUsuario] = useState('');
-    const [senha, setSenha] = useState('');
+export default function Login() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 
-    function fazerLogin() {
-        if (verificarLogin(usuario, senha)) {
-            navigation.navigate('Home'); // CORRIGIDO: Home com H maiúsculo
-        } else {
-            Alert.alert(
-                'Erro',
-                'Usuário ou senha incorretos!'
-            );
-        }
-    }
+      <Image
+        source={{
+          uri: 'https://reactnative.dev/docs/assets/p_cat1.png'
+        }}
+        style={{ width: 200, height: 200 }}
+      />
 
-    return (
-        <View style={styles.container}>
-            <Image
-                source={{
-                    uri: 'https://reactnative.dev/docs/assets/p_cat1.png'
-                }}
-                style={styles.imagem}
-            />
-            
-            <Text style={styles.titulo}>Login</Text>
-            
-            <Text style={styles.label}>Usuário</Text>
-            <TextInput // CORRIGIDO: espaço adicionado
-                placeholder="Digite seu usuário"
-                style={styles.input}
-                value={usuario}
-                onChangeText={setUsuario}
-            />
-            
-            <Text style={styles.label}>Senha</Text>
-            <TextInput
-                placeholder="Digite sua senha"
-                style={styles.input}
-                secureTextEntry={true}
-                value={senha}
-                onChangeText={setSenha}
-            />
-            
-            <View style={styles.botao}>
-                <Button
-                    title="Entrar"
-                    onPress={fazerLogin}
-                    color="#007AFF"
-                />
-            </View>
-        </View>
-    );
+      <Text>Digite o e-mail</Text>
+
+      <TextInput placeholder="fulano@hotmail.com" />
+
+      <Text>Senha</Text>
+
+      <TextInput placeholder="abc@123" />
+
+      <Button
+        title="Entrar"
+        onPress={() => alert('Login pressionado')}
+      />
+
+    </View>
+  );
 }
