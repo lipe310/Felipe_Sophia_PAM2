@@ -1,0 +1,12 @@
+{
+  "name": "React Native Expo",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "forwardPorts": [8081, 19000, 19006],
+  "portsAttributes": {
+    "19006": {
+      "label": "Expo Web",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "npm install"
+}
